@@ -1,11 +1,25 @@
 {
   "name": "css-in-js-mq-helper",
   "version": "1.0.0",
-  "description": "css in js media query helper",
-  "main": "index.js",
+  "description": "",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
-  "author": "Abdalhadi",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadiab/css-in-js-mq-helper.git"
+  },
+  "keywords": ["css", "js", "css-in-js", "media-query"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadiab/css-in-js-mq-helper/issues"
+  },
+  "homepage": "https://github.com/hadiab/css-in-js-mq-helper#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "files": ["lib/**/*"]
 }
