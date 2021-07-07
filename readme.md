@@ -20,7 +20,7 @@ yarn add styled-easy-mq
 
 ## Usage
 
-create a media query, by default the breakpoints are [576, 768, 992, 1200]
+Create a media query function, By default the breakpoints are [576, 768, 992, 1200]
 
 ```ts
 import { createMediaQuery } from 'styled-easy-mq';
@@ -31,19 +31,16 @@ const mq = createMediaQuery()
 You can pass your own breakpoints
 
 ```ts
-import { createMediaQuery } from 'styled-easy-mq';
-
 const br = [500, 700, 900, 1100]
 
 const mq = createMediaQuery(br)
 ```
 
-Passing an array with value for each breakpoint
-I'm using facepaint to generate media query over properties that has an array for thier value
-Note that the first value is considered a default value and is not a child of a media query
-Learn more about (facepaint)[https://github.com/emotion-js/facepaint]
+### Use media query
 
-```ts
+Passing an array with values for each breakpoint (mobile first)
+
+```tsx
 mq`
 	width: ${[300, 600, 900]};
 	color: ${["red", "blue"]};
@@ -51,9 +48,13 @@ mq`
 `
 ```
 
+I'm using facepaint to generate media query over properties that has an array for thier value
+Note that the first value is considered a default value and is not a child of a media query
+Learn more about [facepaint](https://github.com/emotion-js/facepaint)
+
 ### You can also use it as an object
 
-```ts
+```tsx
 mq({
 	width: [300, 600, 900];
 	color: ["red", "blue"];
@@ -79,6 +80,13 @@ const className = mq`
 
 <div className={css(className)}>Example</div>
 ```
+
+## Syntax Highlighting
+
+If you didn't get any syntax highlighting that's because styled-components plugin support these alises (styled, css)
+
+* One option is to change the var name from mq to styled, css or even xstyled
+* Another option is to use es6-string-css it's VS Code plugin By Mikhail Bashkirov to (learn more)[https://marketplace.visualstudio.com/items?itemName=bashmish.es6-string-css]
 
 ## Contributing
 
