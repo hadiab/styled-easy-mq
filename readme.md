@@ -31,7 +31,7 @@ You can pass your own breakpoints
 ```ts
 const br = [500, 700, 900, 1100] // or ["20em", "30em", "50em", "70em"]
 
-const mq = createMediaQuery({ breakpoints: br })
+const mq = createMediaQuery(br)
 ```
 
 ### Use media query
@@ -55,7 +55,7 @@ learn more about [facepaint](https://github.com/emotion-js/facepaint)
 With emotion (also work with styled-components)
 
 ```tsx
-import { createMediaQuery } from 'styled-easy-mq';
+import { createMediaQuery } from "styled-easy-mq"
 import { css } from "emotion"
 
 const mq = createMediaQuery()
@@ -69,14 +69,15 @@ const style = mq`
 <div className={css(style)}>Example</div>
 ```
 
-## Wrapping with css function
+## Create css function
 
-You can pass the css function, so you don't need to wrap every style with css
+You can create your own css function, so you don't need to wrap every style with css
 
 ```tsx
+import { createCss } from "styled-easy-mq"
 import { css as emotion } from "emotion"
 
-const css = createMediaQuery({ css: emotion })
+const css = createCss(emotion)
 
 const className = css`
 	display: flex;
@@ -92,7 +93,13 @@ const className = css`
 #### createMediaQuery `function`
 
 ```ts
-createMediaQuery = (options: { breakpoints?: number[] | string[], css?: (...args: any[]) => string }) => string | DynamicStyleFunction
+createMediaQuery = (breakpoints?: number[]) => | DynamicStyleFunction
+```
+
+#### createCss `function`
+
+```ts
+createCss = (css: (...args: any[]) => string, breakpoints?: number[]) => string
 ```
 
 ### You can also use it as an object
