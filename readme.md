@@ -31,7 +31,7 @@ const mq = createMediaQuery()
 You can pass your own breakpoints
 
 ```ts
-const br = [500, 700, 900, 1100]
+const br = [500, 700, 900, 1100] // or ["20em", "30em", "50em", "70em"]
 
 const mq = createMediaQuery({ breakpoints: br })
 ```
@@ -72,18 +72,32 @@ import { css } from "emotion"
 
 const mq = createMediaQuery()
 
-const className = mq`
+const style = mq`
 	display: flex;
 	flex-direction: ${["column", "row"]};
 	padding: ${[10, 30]};
 `
 
-<div className={css(className)}>Example</div>
+<div className={css(style)}>Example</div>
 ```
 
 ## Wrapping with css function
 
 You can pass the css function, so you don't need to wrap every style with css
+
+```tsx
+import { css as emotion } from "emotion"
+
+const css = createMediaQuery({ css: emotion })
+
+const className = css`
+	display: flex;
+	flex-direction: ${["row", "column"]};
+	margin: ${[10, 30]};
+`
+
+<div className={className}>CSS</div>
+```
 
 ## Syntax Highlighting
 
