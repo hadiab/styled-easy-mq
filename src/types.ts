@@ -6,3 +6,7 @@ export type StyleObject = {
 	[K in keyof CSSProperties]?: CSSProperties[K] | Array<CSSProperties[K]>
 }
 
+export type CreateOptions = {
+	br?: number[]
+	css?: (...args: any[]) => string
+}

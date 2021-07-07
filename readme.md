@@ -48,9 +48,9 @@ mq`
 `
 ```
 
-I'm using facepaint to generate media query over properties that has an array for thier value
-Note that the first value is considered a default value and is not a child of a media query
-Learn more about [facepaint](https://github.com/emotion-js/facepaint)
+I'm using facepaint to generate media query each over properties that has an array value,
+the first value is considered a default value and is not a child of a media query,
+learn more about [facepaint](https://github.com/emotion-js/facepaint)
 
 ### You can also use it as an object
 
@@ -64,7 +64,7 @@ mq({
 
 ## Example
 
-With emotion, also work with styled-components
+With emotion (also work with styled-components)
 
 ```tsx
 import { createMediaQuery } from 'styled-easy-mq';
@@ -86,7 +86,7 @@ const className = mq`
 If you didn't get any syntax highlighting that's because styled-components plugin support these alises (styled, css)
 
 * One option is to change the var name from mq to styled, css or even xstyled
-* Another option is to use es6-string-css it's VS Code plugin By Mikhail Bashkirov to (learn more)[https://marketplace.visualstudio.com/items?itemName=bashmish.es6-string-css]
+* Another option is to use es6-string-css it's VS Code plugin By Mikhail Bashkirov to [learn more](https://marketplace.visualstudio.com/items?itemName=bashmish.es6-string-css)
 
 ## Contributing
 
