@@ -4,15 +4,13 @@ React easy state managment with hooks
 
 [![npm version](https://img.shields.io/npm/v/reaxy.svg)](https://www.npmjs.com/package/reaxy)
 
-### Installing
-
-Install with npm
+## Install
 
 ```
 npm install styled-easy-mq
 ```
+**or**
 
-Install with yarn
 
 ```
 yarn add styled-easy-mq
@@ -48,19 +46,9 @@ mq`
 `
 ```
 
-I'm using facepaint to generate media query each over properties that has an array value,
+I'm using facepaint to generate media query for each property that have an array value,
 the first value is considered a default value and is not a child of a media query,
 learn more about [facepaint](https://github.com/emotion-js/facepaint)
-
-### You can also use it as an object
-
-```tsx
-mq({
-	width: [300, 600, 900];
-	color: ["red", "blue"];
-	backgroundColor: "white"
-})
-```
 
 ## Example
 
@@ -97,6 +85,26 @@ const className = css`
 `
 
 <div className={className}>CSS</div>
+```
+
+## API
+
+#### createMediaQuery `function`
+
+```ts
+createMediaQuery = (options: { breakpoints?: number[] | string[] css?: (...args: any[]) => string }) => string | DynamicStyleFunction
+```
+
+### You can also use it as an object
+
+it's the default way of how facepaint work, this library was intended to make the using of media query in string much easier, so if you only will use the object syntax you don't need this library, facepaint is enough
+
+```tsx
+mq({
+	width: [300, 600, 900];
+	color: ["red", "blue"];
+	backgroundColor: "white"
+})
 ```
 
 ## Syntax Highlighting
