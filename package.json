@@ -1,7 +1,7 @@
 {
   "name": "styled-easy-mq",
   "version": "1.0.0",
-  "description": "",
+  "description": "Easy media query in `backticks`",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {

@@ -1,6 +1,7 @@
 # Styled Easy MQ
 
-React easy state managment with hooks
+Easy media query in `backticks`
+
 
 [![npm version](https://img.shields.io/npm/v/reaxy.svg)](https://www.npmjs.com/package/reaxy)
 
