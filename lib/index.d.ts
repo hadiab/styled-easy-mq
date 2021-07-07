@@ -1,5 +1,4 @@
-import { CreateOptions, StyleObject } from "./types";
+import { StyleObject } from "./types";
 import * as facepaint from "facepaint";
-declare type ReturnType<T> = T extends undefined ? (style: TemplateStringsArray | StyleObject, ...args: any[]) => facepaint.DynamicStyle[] : (style: TemplateStringsArray | StyleObject, ...args: any[]) => string;
-export declare const createMediaQuery: (options?: CreateOptions | undefined) => (style: TemplateStringsArray | StyleObject, ...args: any[]) => string;
-export {};
+export declare const createMediaQuery: (breakpoints?: number[]) => (style: TemplateStringsArray | StyleObject, ...args: any[]) => facepaint.DynamicStyle[];
+export declare const createCss: (css: (...args: any[]) => string, breakpoints?: number[]) => (style: TemplateStringsArray | StyleObject, ...args: any[]) => string;
