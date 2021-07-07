@@ -22,7 +22,7 @@ const cssToObject = (cssStr: string, ...args: any[]) => {
 	return properties
 }
 
-export const createMediaQuery = (breakpoints: number[]) => {
+export const createMediaQuery = (breakpoints: number[] = [576, 768, 992, 1200]) => {
 	const facepaintMQ = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 	const mq = (style: TemplateStringsArray | StyleObject, ...args: any[]) => {
