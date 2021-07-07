@@ -3,7 +3,7 @@
 Easy media query in `backticks`
 
 
-[![npm version](https://img.shields.io/npm/v/reaxy.svg)](https://www.npmjs.com/package/reaxy)
+[![npm version](https://img.shields.io/npm/v/styled-easy-mq.svg)](https://www.npmjs.com/package/styled-easy-mq)
 
 ## Install
 
