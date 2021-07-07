@@ -7,6 +7,6 @@ export type StyleObject = {
 }
 
 export type CreateOptions = {
-	br?: number[]
+	breakpoints?: number[] | string[]
 	css?: (...args: any[]) => string
 }

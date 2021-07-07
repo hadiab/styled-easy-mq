@@ -22,12 +22,17 @@ const cssToObject = (cssStr: string, ...args: any[]): StyleObject => {
 	return properties
 }
 
-const initOptions: CreateOptions = { br: [576, 768, 992, 1200] }
+const getMedia = (bp: number | string) => {
+	const value = (typeof bp === "string") ? bp : `${bp}px`
+	return `@media (min-width: ${value})`
+}
+
+const initOptions: CreateOptions = { breakpoints: [576, 768, 992, 1200] }
 
 export const createMediaQuery = (options: CreateOptions = initOptions) => {
-	const { br = [576, 768, 992, 1200] } = options
+	const { breakpoints = [576, 768, 992, 1200] } = options
 
-	const facepaintMQ = facepaint(br.map(bp => `@media (min-width: ${bp}px)`))
+	const facepaintMQ = facepaint(breakpoints.map(bp => getMedia(bp)))
 
 	const makeStyle = (style: TemplateStringsArray | StyleObject) => {
 		const css = initOptions.css

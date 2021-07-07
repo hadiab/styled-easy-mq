@@ -33,7 +33,7 @@ You can pass your own breakpoints
 ```ts
 const br = [500, 700, 900, 1100]
 
-const mq = createMediaQuery(br)
+const mq = createMediaQuery({ breakpoints: br })
 ```
 
 ### Use media query
@@ -70,7 +70,7 @@ With emotion (also work with styled-components)
 import { createMediaQuery } from 'styled-easy-mq';
 import { css } from "emotion"
 
-const mq = createMediaQuery(br)
+const mq = createMediaQuery()
 
 const className = mq`
 	display: flex;
@@ -80,6 +80,10 @@ const className = mq`
 
 <div className={css(className)}>Example</div>
 ```
+
+## Wrapping with css function
+
+You can pass the css function, so you don't need to wrap every style with css
 
 ## Syntax Highlighting
 
