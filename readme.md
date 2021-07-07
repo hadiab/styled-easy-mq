@@ -93,13 +93,13 @@ const className = css`
 #### createMediaQuery `function`
 
 ```ts
-createMediaQuery = (breakpoints?: number[]) => | DynamicStyleFunction
+createMediaQuery = (breakpoints?: number[]) => (style: StyleObject) => DynamicStyle[]
 ```
 
 #### createCss `function`
 
 ```ts
-createCss = (css: (...args: any[]) => string, breakpoints?: number[]) => string
+createCss = (css: (...args: any[]) => string, breakpoints?: number[]) => (style: TemplateStringsArray) => string
 ```
 
 ### You can also use it as an object

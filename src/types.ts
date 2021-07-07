@@ -5,8 +5,3 @@ interface CSSProperties extends CSS.Properties<string | number> {}
 export type StyleObject = {
 	[K in keyof CSSProperties]?: CSSProperties[K] | Array<CSSProperties[K]>
 }
-
-export type CreateOptions = {
-	breakpoints?: number[] | string[]
-	css?: (...args: any[]) => string
-}
