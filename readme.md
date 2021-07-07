@@ -69,7 +69,7 @@ const style = mq`
 <div className={css(style)}>Example</div>
 ```
 
-## Create css function
+## Create Css function
 
 You can create your own css function, so you don't need to wrap every style with css
 
