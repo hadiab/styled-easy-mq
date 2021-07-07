@@ -11,7 +11,6 @@ npm install styled-easy-mq
 ```
 **or**
 
-
 ```
 yarn add styled-easy-mq
 ```
@@ -63,7 +62,7 @@ const mq = createMediaQuery()
 const style = mq`
 	display: flex;
 	flex-direction: ${["column", "row"]};
-	padding: ${[10, 30]};
+	padding: ${[10, 20, 30, 40]};
 `
 
 <div className={css(style)}>Example</div>
@@ -92,12 +91,10 @@ const className = css`
 #### createMediaQuery `function`
 
 ```ts
-createMediaQuery = (options: { breakpoints?: number[] | string[] css?: (...args: any[]) => string }) => string | DynamicStyleFunction
+createMediaQuery = (options: { breakpoints?: number[] | string[], css?: (...args: any[]) => string }) => string | DynamicStyleFunction
 ```
 
 ### You can also use it as an object
-
-it's the default way of how facepaint work, this library was intended to make the using of media query in string much easier, so if you only will use the object syntax you don't need this library, facepaint is enough
 
 ```tsx
 mq({
@@ -107,12 +104,14 @@ mq({
 })
 ```
 
+it's the default way of how facepaint work, this library was intended to make the using of media query in string much easier, so if you only will use the object syntax you don't need this library, facepaint is enough
+
 ## Syntax Highlighting
 
 If you didn't get any syntax highlighting that's because styled-components plugin support these alises (styled, css)
 
 * One option is to change the var name from mq to styled, css or even xstyled
-* Another option is to use es6-string-css it's VS Code plugin By Mikhail Bashkirov to [learn more](https://marketplace.visualstudio.com/items?itemName=bashmish.es6-string-css)
+* Another option is to use es6-string-css it's VS Code plugin, [learn more](https://marketplace.visualstudio.com/items?itemName=bashmish.es6-string-css)
 
 ## Contributing
 
