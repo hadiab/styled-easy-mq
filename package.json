@@ -11,7 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/hadiab/css-in-js-mq-helper.git"
   },
-  "keywords": ["css", "js", "css-in-js", "media-query"],
+  "keywords": [
+    "css",
+    "js",
+    "css-in-js",
+    "media-query"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,7 +24,14 @@
   },
   "homepage": "https://github.com/hadiab/css-in-js-mq-helper#readme",
   "devDependencies": {
+    "@types/facepaint": "^1.2.1",
     "typescript": "^4.3.5"
   },
-  "files": ["lib/**/*"]
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "csstype": "^3.0.8",
+    "facepaint": "^1.2.1"
+  }
 }
