@@ -1,4 +1,4 @@
-import * as CSS from 'csstype';
+import * as CSS from "csstype"
 
 interface CSSProperties extends CSS.Properties<string | number> {}
 
