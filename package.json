@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hadiab/css-in-js-mq-helper.git"
+    "url": "git+https://github.com/hadiab/styled-easy-mq"
   },
   "keywords": [
     "css",
@@ -20,9 +20,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hadiab/css-in-js-mq-helper/issues"
+    "url": "https://github.com/hadiab/styled-easy-mq/issues"
   },
-  "homepage": "https://github.com/hadiab/css-in-js-mq-helper#readme",
+  "homepage": "https://github.com/hadiab/styled-easy-mq#readme",
   "devDependencies": {
     "@types/facepaint": "^1.2.1",
     "typescript": "^4.3.5"
