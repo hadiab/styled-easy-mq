@@ -1,5 +1,5 @@
 import { StyleObject } from "./types"
-import * as facepaint from "facepaint"
+import facepaint from "facepaint"
 
 const cssToObject = (cssStr: string, ...args: any[]): StyleObject => {
 	const regex = /([\w-]*)\s*:\s*([^;]*)/g;
@@ -27,6 +27,8 @@ const getMedia = (bp: number | string) => {
 	return `@media (min-width: ${value})`
 }
 
+const getFacepaint = (breakpoints: number[]) => facepaint(breakpoints.map(bp => getMedia(bp)))
+
 const getCssObject = (style: TemplateStringsArray | StyleObject, ...args: any[]) => {
 	if(Array.isArray(style)) {
 		const cssStr = style.map((item, i) => item + (args[i] ? `{${i}}` : ""))
@@ -38,7 +40,7 @@ const getCssObject = (style: TemplateStringsArray | StyleObject, ...args: any[])
 }
 
 export const createMediaQuery = (breakpoints: number[] = [576, 768, 992, 1200]) => {
-	const mq = facepaint(breakpoints.map(bp => getMedia(bp)))
+	const mq = getFacepaint(breakpoints)
 
 	return (style: TemplateStringsArray | StyleObject, ...args: any[]) => {
 		return mq(getCssObject(style, ...args))
@@ -46,7 +48,7 @@ export const createMediaQuery = (breakpoints: number[] = [576, 768, 992, 1200]) 
 }
 
 export const createCss = (css: (...args: any[]) => string, breakpoints: number[] = [576, 768, 992, 1200]) => {
-	const mq = facepaint(breakpoints.map(bp => getMedia(bp)))
+	const mq = getFacepaint(breakpoints)
 
 	return (style: TemplateStringsArray | StyleObject, ...args: any[]) => {
 		return css(mq(getCssObject(style, ...args)))
