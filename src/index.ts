@@ -3,7 +3,7 @@ import * as CSS from "csstype"
 
 interface CSSProperties extends CSS.Properties<string | number> {}
 
-export type StyleObject = {
+type StyleObject = {
 	[K in keyof CSSProperties]?: CSSProperties[K] | Array<CSSProperties[K]>
 }
 
@@ -60,3 +60,5 @@ export const createCss = (css: (...args: any[]) => string, breakpoints: number[]
 		return css(mq(getCssObject(style, ...args)))
 	}
 }
+
+export default { createMediaQuery, createCss }
