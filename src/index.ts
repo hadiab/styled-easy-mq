@@ -7,6 +7,8 @@ type StyleObject = {
 	[K in keyof CSSProperties]?: CSSProperties[K] | Array<CSSProperties[K]>
 }
 
+const toCamelCased = (str: string) => str.replace(/-([a-z])/g, (g) => g[1].toUpperCase())
+
 const cssToObject = (cssStr: string, ...args: any[]): StyleObject => {
 	const regex = /([\w-]*)\s*:\s*([^;]*)/g;
 	let match: any = null
@@ -15,6 +17,7 @@ const cssToObject = (cssStr: string, ...args: any[]): StyleObject => {
 
 	// eslint-disable-next-line no-cond-assign
 	while(match = regex.exec(cssStr)) {
+		const key = toCamelCased(match[1])
 		let value = match[2].trim()
 
 		if(value === `{${argsCounter}}`) {
@@ -22,7 +25,7 @@ const cssToObject = (cssStr: string, ...args: any[]): StyleObject => {
 			argsCounter++
 		}
 
-		properties[match[1]] = value
+		properties[key] = value
 	}
 
 	return properties
@@ -60,5 +63,3 @@ export const createCss = (css: (...args: any[]) => string, breakpoints: number[]
 		return css(mq(getCssObject(style, ...args)))
 	}
 }
-
-export default { createMediaQuery, createCss }

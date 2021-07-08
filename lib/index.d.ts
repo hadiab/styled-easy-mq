@@ -7,8 +7,4 @@ declare type StyleObject = {
 };
 export declare const createMediaQuery: (breakpoints?: number[]) => (style: TemplateStringsArray | StyleObject, ...args: any[]) => facepaint.DynamicStyle[];
 export declare const createCss: (css: (...args: any[]) => string, breakpoints?: number[]) => (style: TemplateStringsArray | StyleObject, ...args: any[]) => string;
-declare const _default: {
-    createMediaQuery: (breakpoints?: number[]) => (style: StyleObject | TemplateStringsArray, ...args: any[]) => facepaint.DynamicStyle[];
-    createCss: (css: (...args: any[]) => string, breakpoints?: number[]) => (style: StyleObject | TemplateStringsArray, ...args: any[]) => string;
-};
-export default _default;
+export {};
